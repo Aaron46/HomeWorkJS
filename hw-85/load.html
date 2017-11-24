@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .modal {
+            display: none;
+            /* position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%; */
+            /* background: rgba( 255, 255, 255, .8); */
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 18px;
+            height: 18px;
+
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        body.loading {
+            overflow: hidden;
+        }
+
+        body.loading .modal {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <input type="text" id="siteloaded">
+    <button id='loadBtn'>Load</button>
+    <pre id="msgDiv">
+
+    </pre>
+    <div class="modal">
+
+    </div>
+    <script src="../../../jquery-3.2.1>min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script src="load.js"></script>
+</body>
+
+</html>

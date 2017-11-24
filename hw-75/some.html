@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mySome</title>
+    <script>
+        var letters = ['a','b','C','d','e','f','G','H','I'];
+        var lowers = ['a','b','c','d','e','f','g','h','i'];
+        var uppers = ['A','B','C','D','E','F','G','H','I'];
+        function isUpperCase(letter){
+            if (letter === letter.toUpperCase()) 
+                return true;
+        }
+        function isntUpperCase(letter){
+            if (letter !== letter.toUpperCase()) 
+                return true;
+        }
+        function mySome(array,test){
+            for(var i = 0; i < array.length; i++){
+                if(test(array[i])){
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log(mySome(letters,isUpperCase));
+        console.log(mySome(letters,isntUpperCase));
+        console.log(mySome(lowers,isUpperCase));
+        console.log(mySome(lowers,isntUpperCase));
+        console.log(mySome(uppers,isUpperCase));
+        console.log(mySome(uppers,isntUpperCase));
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

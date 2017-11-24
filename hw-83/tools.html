@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="theDonald">Donald Trump</h1>
+    <button id="hideMe">hide</button>
+    <button id="showMe">show</button>
+    <script src="tools.js"></script>
+    <script>
+        var someHTML = pcs.tools.wrap('theDonald').hide();
+        pcs.tools.wrap('showMe').click(function () {
+            someHTML.show().pulsate();
+        });
+
+        pcs.tools.wrap('hideMe').click(someHTML.hide);
+
+    </script>
+</body>
+
+</html>
