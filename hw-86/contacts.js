@@ -3,15 +3,25 @@
     "use strict";
     var addJson;
     var objectAgain;
-    var contactTable = $("#contactTable tbody"),
-        contacts = [];
+    var contactTable = $("#contactTable");
+    var contacts = [];
+    var firstNameInput = $("#first");
+    var lastNameInput = $("#last");
+    var emailInput = $("#email");
+    var phoneInput = $("#phone");
+    var addContactForm = $("#addContactForm");
+
 
     function addWjson() {
-        $.get("json.js", function (loadedData) {
-            // alert(loadedData);
-            objectAgain = JSON.parse(loadedData);
+        // $.get("json.js", function (loadedData) {
+        //     console.log(loadedData);
+        //     objectAgain = JSON.parse(loadedData);
+        //     console.log(objectAgain);//see in console;
+        //     objectAgain.forEach(addContact);
+        // })
+        $.getJSON("json.js", function (loadedData) {
             console.log(objectAgain);//see in console;
-            objectAgain.forEach(addContact);
+            loadedData.forEach(addContact);
         }).fail(function (xhr, statusCode, statusText) {
             alert("error: " + statusText);
             console.log(xhr, statusCode, statusText);
@@ -38,11 +48,6 @@
         );
     }
 
-    var firstNameInput = $("#first");
-    var lastNameInput = $("#last");
-    var emailInput = $("#email");
-    var phoneInput = $("#phone");
-    var addContactForm = $("#addContactForm");
 
     function hideAddContactForm() {
         addContactForm.slideUp();
