@@ -9,7 +9,7 @@
 
     $.get("jTube.json", function (loadedText) {
         storedVideos = loadedText;
-        console.log(storedVideos);
+        // console.log(storedVideos);
         storedVideos.forEach(display);
         play();
     }).fail(function (jqxhr, status, statusText) {
@@ -17,7 +17,7 @@
         errorElement.show();
     })
     function display(storedVideos) {
-        $("#myTubeList ul").append('<li value="' + (value++) + '">' + storedVideos.Title + "</button></li>");
+        $("#myTubeList ul").append('<li value="' + (value++) + '">' + storedVideos.Title + "</li>");
 
     }
     function play() {
