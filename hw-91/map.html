@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #map {
+            height: 100%;
+            width: 75%;
+            align-self: flex-end;
+        }
+
+        html,
+        body {
+
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            overflow: hidden;
+        }
+
+        #flexdown {
+            flex-direction: column;
+            overflow-y: scroll;
+        }
+
+        #place,
+        #search {
+            height: 18px;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flexdown">
+        <input type="text" id="place">
+        <button id="search">Search</button>
+        <div id="places">
+            <ul>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div id="map"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" assync defer></script>
+    <script src="maps.js" assync defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWyl9v7o-ysUpc6FGai16tTLZ5vsIr_EA&libraries=drawing&callback=initMap"
+        async defer></script>
+
+</body>
+
+</html>
