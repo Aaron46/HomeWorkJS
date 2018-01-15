@@ -30,7 +30,7 @@
         }
 
         #place,
-        #search {
+        .button {
             height: 18px;
         }
 
@@ -43,19 +43,17 @@
 <body>
     <div id="flexdown">
         <input type="text" id="place">
-        <button id="search">Search</button>
+        <button class="button" id="search">Search</button>
+        <button class="button" id="clear">Clear</button>
         <div id="places">
             <ul>
 
             </ul>
-
         </div>
     </div>
-
-
     <div id="map"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" assync defer></script>
-    <script src="maps.js" assync defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWyl9v7o-ysUpc6FGai16tTLZ5vsIr_EA&libraries=drawing&callback=initMap"
         async defer></script>
 
