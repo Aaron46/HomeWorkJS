@@ -12,7 +12,7 @@
 
     }
     function setNumbers(a, b) {
-        Math.random
+        Math.random;
     }
     Ant.prototype.move = function () {
         this.x++;
