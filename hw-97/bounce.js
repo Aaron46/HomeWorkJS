@@ -2,8 +2,14 @@
     "use strict";
     var canvas = document.getElementById("theCanvas"),
         context = canvas.getContext('2d'),
-        x = 50,
-        y = 50;
+        ballRadius = 50,
+        ballX = ballRadius,
+        ballY = ballRadius,
+        dx = 2,
+        dy = 2;
+
+    // x = 50,
+    // y = 50;
 
 
     function resizeCanvas() {
@@ -13,8 +19,10 @@
 
     function drawCircle() {
         context.beginPath();
-        context.arc(x, y, 50, 0, 2 * Math.PI, false);
+        context.arc(ballX, ballY, 50, 0, 2 * Math.PI, false);
         context.stroke();
+        context.fillStyle = 'red';
+        context.fill();
     }
 
 
@@ -24,28 +32,14 @@
     setInterval(function () {
         context.clearRect(0, 0, canvas.width, canvas.height);
         drawCircle();
-        var situation;
-        if (x >= 50) {
-            situation = "BOUNCEDOWN";
+
+        if (ballX + dx < 50 || ballX + dx > canvas.width - ballRadius) {
+            dx = -dx;
         }
-        else if (x = canvas.height - 50) {
-            situation = "BOUNCEUP";
+        if (ballY + dy < 50 || ballY + dy > canvas.height - ballRadius) {
+            dy = -dy;
         }
-        switch (situation) {
-            case "BOUNCEDOWN":
-                x++;
-                y++;
-                break;
-            case "BOUNCEUP":
-                x++;
-                y--;
-                break;
-            // default:
-            //     bounceDown;
-            //     break;
-        };
-
-
-
+        ballX += dx;
+        ballY += dy;
     }, 20);
 }())
