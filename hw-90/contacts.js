@@ -54,8 +54,8 @@
                 theRow.remove();
             }).fail(function (jqxhr) {
                 pcs.messagebox.show("Error: " + jqxhr.responseText);
-            });;
-        })
+            });
+        });
     }
 
 
@@ -75,7 +75,7 @@
             // $.post('addContact.php', newContact, function () {
             addContact(newContact);
             hideAddContactForm();
-        })
+        });
 
         event.preventDefault();
     });
@@ -92,6 +92,6 @@
             console.log(loadedContacts);
             objectAgain = JSON.parse(loadedContacts);
             objectAgain.forEach(addContact);
-        })
-    })
+        });
+    });
 }());

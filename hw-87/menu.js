@@ -46,4 +46,4 @@
         addContactForm.slideUp();
         addContactForm[0].reset();
     }
-})()
+})();

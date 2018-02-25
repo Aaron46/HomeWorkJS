@@ -2,18 +2,18 @@
     "use strict";
     var canvas = document.getElementById("theCanvas"),
         context = canvas.getContext('2d'),
-        img = new Image(),
-        // snakeY       = window.innerHeight / 2,
-        // snakeX      = window.innerWidth / 2,
-        snakeY = 0,
+        img = new Image();
+    img.src = 'images/Snake.png';
+
+    var snakeY = 10,
         snakeX = 10,
         snakeSize = 64,
         direction;
+
     const LEFT = 37,
         DOWN = 38,
         RIGHT = 39,
         UP = 40;
-    img.src = 'images/Snake.png';
 
     function resizeCanvas() {
         var width = window.innerWidth - 10;

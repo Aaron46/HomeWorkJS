@@ -15,7 +15,7 @@ function initMap() {
 
     var doodle = new google.maps.drawing.DrawingManager({
         map: map
-    })
+    });
     var markers = [];
     var clear = $("#clear");
 
@@ -27,19 +27,18 @@ function initMap() {
 
             if (a && markers.length !== 0) {
                 markers.forEach(function (marker) {
-                    marker.setMap(null)
-                })
+                    marker.setMap(null);
+                });
                 markers = [];
                 placesDiv.empty();
-            };
+            }
             var bounds = new google.maps.LatLngBounds();
             a.geonames.forEach(function (geoname) {
                 var location = { lat: geoname.lat, lng: geoname.lng };
                 if (geoname.thumbnailImg) {
                     placesDiv.append("<li><h1>" + geoname.title + "</h1><img src='" + geoname.thumbnailImg + " ' /></li > ");
                 } else {
-                    // ("<li><img src='" + geoname.thumbnailImg + " ' /></li > ")
-                    ("<li><h1>" + geoname.title + "</h1><h1>No Image Available</h1></li > ")
+                    placesDiv.append("<li><h1>" + geoname.title + "</h1><h1>No Image Available</h1></li > ");
                 }
 
                 marker = new google.maps.Marker({
@@ -51,12 +50,12 @@ function initMap() {
             });
             map.fitBounds(bounds);
         });
-    })
+    });
 
     clear.click(function clear() {
         markers.forEach(function (marker) {
-            marker.setMap(null)
-        })
+            marker.setMap(null);
+        });
         markers = [];
         placesDiv.empty();
     });
